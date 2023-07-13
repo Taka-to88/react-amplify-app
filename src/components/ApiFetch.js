@@ -14,11 +14,7 @@ const ApiFetch = () => {
 
   return (
     <div>
-      <ul>
-        {posts.map((post) => (
-          <li> {post.message} </li>
-        ))}
-      </ul>
+      <a> {posts.message} </a>
     </div>
   );
 };
