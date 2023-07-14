@@ -1,0 +1,43 @@
+swagger: "2.0" # version2が最新
+info:
+  title: test-api
+  description: Posting API Gateway with a Google Cloud Functions backend
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+
+paths:
+  /get-time:
+    options:
+      summary: cors-get-time
+      operationId: cors-get-time
+      x-google-backend:
+        address: https://asia-northeast1-concrete-list-354802.cloudfunctions.net/get_time
+      responses:
+        "200":
+          description: A successful response
+          schema:
+            type: string
+    get:
+      summary: get-japan-time
+      operationId: get-japan-time
+      x-google-backend:
+        address: https://asia-northeast1-concrete-list-354802.cloudfunctions.net/get_time
+      responses:
+        "200":
+          description: A successful response
+          schema:
+            type: string
+
+    post:
+      summary: get-country-time
+      operationId: get-country-time
+      x-google-backend:
+        address: https://asia-northeast1-concrete-list-354802.cloudfunctions.net/get_time
+      responses:
+        "200":
+          description: A successful response
+          schema:
+            type: string
