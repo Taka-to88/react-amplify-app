@@ -12,11 +12,10 @@ TIME_ZONE = {
 
 
 def get_time(request):
-    print(f'requestの中身:{vars(request)}')
     # cors設定
     if request.method == 'OPTIONS':
         headers = {
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': 'https://main.d10gvnlkhilpg6.amplifyapp.com',
             'Access-Control-Allow-Methods': 'GET',
             'Access-Control-Allow-Headers': 'Content-Type',
         }
@@ -25,7 +24,7 @@ def get_time(request):
     if request.method == 'GET':
         now = datetime.now(ZoneInfo(TIME_ZONE["日本"]))
         response = {'message': f'日本の現在時刻は{now}です'}
-        headers = {'Access-Control-Allow-Origin': '*'}
+        headers = {'Access-Control-Allow-Origin': 'https://main.d10gvnlkhilpg6.amplifyapp.com'}
         return (response, 200, headers)
 
 
